@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.alibaba.android.arouter.launcher.ARouter
-import com.linda.lib_common.constants.RouterPaths
 import com.linda.lib_common.utils.NetworkUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,12 +16,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        ARouter.init(application)
         text.setOnClickListener {
-            Log.d("", "发起了跳转")
+            Log.d("111", "发起了跳转")
 
 //            ARouter.getInstance().build(RouterPaths.HOME_ACTIVITY)
 //                .navigation()
+        }
+        btn_arouter.setOnClickListener {
+            Log.d("111", "发起了跳转")
+            Toast.makeText(this, "xxxx", Toast.LENGTH_SHORT)
         }
     }
 }
