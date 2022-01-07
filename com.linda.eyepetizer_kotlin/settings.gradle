@@ -1,0 +1,4 @@
+include ':module_home'
+include ':lib_common'
+include ':app'
+rootProject.name = "eyepetizer_kotlin"
