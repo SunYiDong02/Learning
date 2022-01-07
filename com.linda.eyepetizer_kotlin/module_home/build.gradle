@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+    api project(path: ':lib_base')
     api project(path: ':lib_common')
 //    api 'com.alibaba:arouter-api:1.5.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

@@ -1,7 +1,11 @@
 package com.linda.eyepetizer_kotlin
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.alibaba.android.arouter.launcher.ARouter
+import com.linda.lib_common.constants.RouterPaths
 import com.linda.lib_common.utils.NetworkUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -10,8 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         text.text = "网络是否可用+${NetworkUtil.isNetworkAvailable2(this)}"
-//        text.setOnClickListener {
-//            ARouter.getInstance().build(RouterPaths.DAILY_FRAGMENT).navigation() as Fragment
-//        }
+        initView()
+    }
+
+    private fun initView() {
+        ARouter.init(application)
+        text.setOnClickListener {
+            Log.d("", "发起了跳转")
+
+//            ARouter.getInstance().build(RouterPaths.HOME_ACTIVITY)
+//                .navigation()
+        }
     }
 }
